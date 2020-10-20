@@ -3,26 +3,33 @@
 
 #include <iostream>
 #include <string>
+const int MAXIMOHORASTRABALHO = 8;
+class Empregado
+{
+public:
+  //base construtctor
+  Empregado(std::string nome, double salarioHora)
+      : nome{nome},
+        salarioHora{salarioHora} {};
+  double pagamentoMes(double horasTrabalhadas)
+  {
 
-class Empregado {
-	
-  public:
-    double salarioHora;  
-    double quotaMensalVendas;  
+    double t = horasTrabalhadas;
 
+    //Cálculo de hora extra (+50% se horasTrabalhadas > 8)
 
-    double pagamentoMes(double horasTrabalhadas) {
- 
-      double t = horasTrabalhadas;
-	  
-	  //Cálculo de hora extra (+50% se horasTrabalhadas > 8)
-      if (horasTrabalhadas > 8) {
-        double x = horasTrabalhadas - 8;
-        t += x / 2;
-      }
-	  return t * salarioHora;
+    if (horasTrabalhadas > MAXIMOHORASTRABALHO)
+    {
+      double x = horasTrabalhadas - MAXIMOHORASTRABALHO;
+      t += x / 2;
     }
-	
+
+    return t * salarioHora;
+  }
+
+protected:
+  std::string nome;
+  double salarioHora;
 };
 
 #endif

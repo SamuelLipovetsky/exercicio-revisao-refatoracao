@@ -7,3 +7,5 @@ Você deve criar uma cópia local desse repositório, fazer as alterações que 
 No seu pull request faça uma lista/descrição detalhada das possíveis soluções que você utilizou.
   
 Dica: Utilize o catálogo com sugestões de refatoração (https://refactoring.com/catalog/).
+
+Foi utilizado herança , devido a simplicidade das classe, 
